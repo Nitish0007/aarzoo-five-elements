@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Five Elements</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+
+
+ <!-- header -->
+      
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html">
+                              <%= image_tag image_url("logo.png"), alt:"#", style: "height:55px; width:120px; object-fit: cover " %>
+                             
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+               <%= form_with class: "search-form",url:gallery_search_path do |form| %>
+               <div class="wrapper-field">
+   
+               <%= form.text_field :keyword %>
+               <%= form.submit 'Search', class: 'search-btn '  %>
+               </div>
+               <% end %>
+               </div>
+                  <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="//localhost:3000">Home</a>
+                              </li>
+                             
+                              <li class="nav-item">
+                                 <a class="nav-link" href="//localhost:3000/gallery/index">our products</a>
+                              </li>
+                          
+                              <% if user_signed_in? %>
+                              <li class="nav-item">
+                              <%= link_to 'Logout',destroy_user_session_path ,method: :delete, class: 'nav-link' %>
+                              </li>
+                              <% else %>
+                              <%= link_to 'Sign In', new_user_session_path , class: 'nav-link' %>
+                              <% end %>
+
+
+                              <% if session[:admin] %>
+                              <li class="nav-item">
+                              <%= link_to 'Admin logout', admin_logout_path , class: 'nav-link' %>
+                              </li>
+                              <% else %>
+                              <%= link_to 'Admin Login', admin_admin_login_path , class: 'nav-link' %>
+                              <% end %>
+                           </ul>
+
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner -->
+         <!-- end header -->
+         
+      </header>
+
+
+    <%= yield %>
+    
+    
+    <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               
+               <div class="row">
+                  <div class="col-md-4">
+                     <h3>menu links</h3>
+                     <ul class="link_menu">
+                        <li><a href="//localhost:3000">Home</a></li>
+              
+                        <li><a href="//localhost:3000/gallery/index">Our Products</a></li>
+                        <li><a href="//localhost:3000">Gallery</a></li>
+          
+                     </ul>
+                  </div>
+                  <div class=" col-md-3">
+                     <h3>Expertise</h3>
+                     <p class="many">
+                        
+We have expertise in sourcing the choicest of fresh fruits from around the world and distributing it across the length and breadth of India.  We provide fresh fruits and vegetables online.                </p>
+                  </div>
+                  <div class="col-lg-3 offset-mdlg-2     col-md-4 offset-md-1">
+                     <h3>Contact </h3>
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Mohali</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> aarzoo@maropost.com</a></li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i> Call : +91 9896457691</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                                         </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

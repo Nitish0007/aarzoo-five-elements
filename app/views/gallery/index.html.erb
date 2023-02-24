@@ -1,0 +1,20 @@
+<!-- our products -->
+      <div class="products">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-7">
+                  <div class="titlepage">
+                     <h2>Our Products</h2>
+                     <span>What should I be eating for maintaining health? That is the million dollar question.
+Knowing what to put on your plate is different for everyone, as we all have different needs.       </span>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               
+               <%= render 'gallery'%>
+            </div>
+         </div>
+      </div>
+      <%= will_paginate @products %>
+      <!-- end our products -->

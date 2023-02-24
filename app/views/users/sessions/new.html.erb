@@ -1,0 +1,35 @@
+<div class="form-container">
+<div class="form-inner-container">
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<h2>Log in</h2>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%=tag.span f.submit "Log in" ,class:"submit_btn"%>
+  </div>
+  <div class="links-field">
+<%= render "users/shared/links" %>
+</div>
+<% end %>
+<div class="image_container">
+<%= image_tag 'https://images.unsplash.com/photo-1676487030430-6cad55c86e8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNjJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60' %>
+</div>
+</div>
+</div>
+

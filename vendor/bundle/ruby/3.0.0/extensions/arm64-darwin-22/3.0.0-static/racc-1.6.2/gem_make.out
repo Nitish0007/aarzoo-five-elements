@@ -1,0 +1,21 @@
+current directory: /Users/012tmpind/Documents/ror_practice/five_elements/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+/Users/012tmpind/.rubies/ruby-3.0.5/bin/ruby -I /Users/012tmpind/.rubies/ruby-3.0.5/lib/ruby/site_ruby/3.0.0 extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/012tmpind/Documents/ror_practice/five_elements/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230219-10485-yhsq7d sitelibdir\=./.gem.20230219-10485-yhsq7d clean
+
+current directory: /Users/012tmpind/Documents/ror_practice/five_elements/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230219-10485-yhsq7d sitelibdir\=./.gem.20230219-10485-yhsq7d
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/012tmpind/Documents/ror_practice/five_elements/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230219-10485-yhsq7d sitelibdir\=./.gem.20230219-10485-yhsq7d install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230219-10485-yhsq7d/racc
+
+current directory: /Users/012tmpind/Documents/ror_practice/five_elements/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230219-10485-yhsq7d sitelibdir\=./.gem.20230219-10485-yhsq7d clean
