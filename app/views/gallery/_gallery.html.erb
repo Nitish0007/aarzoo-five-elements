@@ -1,24 +1,24 @@
 <% @products.each do |product|%>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                  <div id="ho_bo" class="our_products">
-                     <div class="product">
-                        <figure>
-                        <% if product.images.attached? %>
-                        <%= image_tag product.images.first, alt:"#", style: "height: 300px;width: 300px;object-fit: cover"%>
-                        <%end%>
-                        </figure>
-                     </div>
-                     <h3><%= product.name%></h3>
-                     <span>₹<%= product.price%></span>
-                     <p><%= product.description%></p> </div>
-                     <div class="btn-container">
-                     <% if user_signed_in? %>
-                     <%= button_to 'Buy Now', line_items_path(store_id: product),id:"btn" %>
-                     <% else %>
-                      <%= link_to 'Buy Now', user_session_path,id:"btn" %>
-                     <% end %>
-                   <%= link_to 'View', store_path(product.id),id:"btn" %>  
-                   </div>
-               </div>
-               
-               <% end %>
+<div class="col-lg-3 col-md-6 col-sm-6">
+   <div id="ho_bo" class="our_products">
+      <div class="product">
+         <figure>
+         <% if product.images.attached? %>
+            <%= image_tag product.images.first, alt:"#", style: "height: 300px;width: 300px;object-fit: cover"%>
+         <%end%>
+         </figure>
+      </div>
+      <h3><%= product.name%></h3>
+      <span>₹<%= product.price%></span>
+      <p><%= product.description%></p> </div>
+      <div class="btn-container">
+         <% if user_signed_in? %>
+            <%= button_to 'Buy Now', line_items_path(store_id: product),id:"btn" %>
+         <% else %>
+            <%= link_to 'Buy Now', user_session_path,id:"btn" %>
+         <% end %>
+         <%= link_to 'View', store_path(product.id),id:"btn" %>  
+      </div>
+</div>
+
+<% end %>

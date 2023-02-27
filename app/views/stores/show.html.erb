@@ -1,47 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <div class="show-container">
-<div class="product-images">
-<% if @store.images.attached? %>
-<% @store.images.each do |image| %>
-<%= image_tag image %>
-<% end %>
-<% end %>
-</div>
+  <div class="product-images">
+    <% if @store.images.attached? %>
+      <% @store.images.each do |image| %>
+      <%= image_tag image %>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="product-details">
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
+  <div class="product-details">
+    <p>
+      <strong>Name:</strong>
+      <%= @store.name %>
+    </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @store.category %>
-</p>
+    <p>
+      <strong>Category:</strong>
+      <%= @store.category %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @store.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @store.description %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @store.price %>
-</p>
+    <p>
+      <strong>Price:</strong>
+      <%= @store.price %>
+    </p>
 
-<div class="btn-container">
-<% if session[:admin] %>
-<%= link_to 'Edit', edit_store_path(@store), class: 'submit_btn' %>
-<% end %>
+    <div class="btn-container">
+      <% if session[:admin] %>
+        <%= link_to 'Edit', edit_store_path(@store), class: 'submit_btn' %>
+      <% end %>
 
-<% if session[:admin] %>
-<%= link_to 'Back', stores_path, class: 'submit_btn' %>
-<% else %>
-<%= link_to 'Back', gallery_index_path, class: "submit_btn" %>
-<% end %>
-</div>
-</div>
+      <% if session[:admin] %>
+        <%= link_to 'Back', stores_path, class: 'submit_btn' %>
+      <% else %>
+        <%= link_to 'Back', gallery_index_path, class: "submit_btn" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

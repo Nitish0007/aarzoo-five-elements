@@ -1,12 +1,11 @@
-
 <div class="form-container" id="edit-form">
-<div class="form-inner-container">
+    <div class="form-inner-container">
 
-<%= render 'form', store: @store, title: "Edit Product" %>
+        <%= render 'form', store: @store, title: "Edit Product" %>
 
-</div>
-<div class="btn-container">
-<%= link_to 'Show', @store, class: "submit_btn" %> 
-<%= link_to 'Back', stores_path, class: "submit_btn" %>
-</div>
+    </div>
+    <div class="btn-container">
+            <%= link_to 'Show', @store, class: "submit_btn" %> 
+            <%= link_to 'Back', stores_path, class: "submit_btn" %>
+    </div>
 </div>
